@@ -1,19 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 
-import Home from "./src/Home"
-import Activites from './src/Activites';
-import Hotels from './src/Hotels';
-import Restaurants from './src/Restaurants';
+import Home from "./Components/Home"
+import Activites from './Components/Activites';
+import Hotels from './Components/Hotels';
+import Restaurants from './Components/Restaurants';
+import Visiter from './Components/Visiter';
+import PlacesList from "./Components/PlacesList";
 
 const Navigator = createStackNavigator({
   Home: {screen:Home},
   Activites: {screen:Activites},
   Hotels: {screen:Hotels},
   Restaurants: {screen:Restaurants},
+  Visiter:{screen:PlacesList},
 })
 const Container = createAppContainer(Navigator);
 
