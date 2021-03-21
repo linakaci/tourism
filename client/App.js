@@ -1,16 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Splash from "./src/splash";
-import AppNavigator from "./src/navigation/Navigator";
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+
+import Home from "./src/Home"
+import Activites from './src/Activites';
+import Hotels from './src/Hotels';
+import Restaurants from './src/Restaurants';
+
+const Navigator = createStackNavigator({
+  Home: {screen:Home},
+  Activites: {screen:Activites},
+  Hotels: {screen:Hotels},
+  Restaurants: {screen:Restaurants},
+})
+const Container = createAppContainer(Navigator);
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Splash></Splash>
-      <AppNavigator/>
-      <StatusBar style="auto" />
-    </View>
+  return (    
+      <Container/>
   );
 }
 

@@ -49,7 +49,7 @@ export default class Home extends React.Component {
                     borderRadius: 23
                 }}>
                     <Text
-                        onPress={() => navigate('Restaurants')}
+                        onPress={() => navigate('Activites')}
 
                         style={{
                             color: "white",
