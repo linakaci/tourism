@@ -4,24 +4,24 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 
 import Home from "./Components/Home"
-import Activites from './Components/Activites';
-import Hotels from './Components/Hotels';
-import Restaurants from './Components/Restaurants';
-import Visiter from './Components/Visiter';
+import Activites from './Components/activités/Activites';
+import Hotels from './Components/hotels/Hotels';
+import Restaurants from './Components/restaurants/Restaurants';
+import Visiter from './Components/places/Visiter';
 import PlacesList from "./Components/PlacesList";
 
 const Navigator = createStackNavigator({
-  Home: {screen:Home},
-  Activites: {screen:Activites},
-  Hotels: {screen:Hotels},
-  Restaurants: {screen:Restaurants},
-  Visiter:{screen:PlacesList},
+  Home: { screen: Home },
+  Activites: { screen: Activites },
+  Hotels: { screen: Hotels },
+  Restaurants: { screen: Restaurants },
+  Visiter: { screen: PlacesList },
 })
 const Container = createAppContainer(Navigator);
 
 export default function App() {
-  return (    
-      <Container/>
+  return (
+    <Container />
   );
 }
 
