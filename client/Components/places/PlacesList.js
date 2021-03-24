@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, FlatList, Text } from 'react-native'
-import Data from '../Helpers/Data'
-import { getPlaces } from '../Helpers/API'
+//import Data from '../Helpers/Data'
+//import { getPlaces } from '../../Helpers/API'
 
 import Visiter from './Visiter'
 
@@ -13,8 +13,9 @@ class PlacesList extends React.Component {
       error: null,
       isLoaded: false,
       places: [],
+      
     };
-
+    
   }
 
   componentDidMount() {
@@ -49,7 +50,7 @@ class PlacesList extends React.Component {
     }
   }
 
-  _displayPlaces() {
+  _displayPlaces(props) {
 
     if (this.state.isLoaded == true) {
       return (
@@ -57,7 +58,7 @@ class PlacesList extends React.Component {
           <FlatList
             data={this.state.places}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => <Visiter places={item} />}
+            renderItem={({ item }) => <Visiter navigation={props} places={item} />}
           />
         </View>
       )
@@ -68,9 +69,12 @@ class PlacesList extends React.Component {
   render() {
 
     const { error, isLoaded, items } = this.state;
+    const {navigate} = this.props.navigation;
+    
     return (
+
       <View style={styles.main_container}>
-        {this._displayPlaces()}
+        {this._displayPlaces(this.props.navigation)}
       </View>
     )
   }

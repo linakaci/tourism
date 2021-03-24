@@ -21,7 +21,7 @@ export default class Home extends React.Component {
                     Un habitant de la ville de Béjaia est appelé un Bédjaoui. Le nom français de la ville est Béjaïa.
                     Le surnom de la ville est "Vgaiet, Bougie".
                 </Text>
-                <TouchableOpacity style={styles.button} onPress={() => navigate('Visiter')}>
+                <TouchableOpacity style={styles.button} onPress={() => navigate('PlacesList',{navigation:this.props.navigation})}>
                     <View style={styles.view}>
                         <Text style={{ color: "white" }}>Visiter </Text>
                     </View>

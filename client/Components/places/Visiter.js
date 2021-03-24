@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import Visiter_carte from "./Visiter_carte";
 
 export default class Visiter extends React.Component {
-  render() {
-    const places = this.props.places
 
+  render() {
+    
+    const { navigate } = this.props.navigation;
+    const places = this.props.places
     return (
-   <TouchableOpacity onPress>
+      
+      <TouchableOpacity onPress={() => navigate('Visiter_carte', { place : this.props.places } )}  >
       <View style={styles.main_container}>
         <Image
           style={styles.image}
