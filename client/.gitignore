@@ -1,6 +1,0 @@
-node_module
-package-lock.json
-yarn.lock
-.vscode
-.expo
-.expo-shared

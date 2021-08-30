@@ -8,14 +8,18 @@ import Activites from './Components/activités/Activites';
 import Hotels from './Components/hotels/Hotels';
 import Restaurants from './Components/restaurants/Restaurants';
 import Visiter from './Components/places/Visiter';
-import PlacesList from "./Components/PlacesList";
+import PlacesList from "./Components/places/PlacesList";
+import Visiter_carte from "./Components/places/Visiter_carte";
 
 const Navigator = createStackNavigator({
   Home: { screen: Home },
   Activites: { screen: Activites },
   Hotels: { screen: Hotels },
   Restaurants: { screen: Restaurants },
-  Visiter: { screen: PlacesList },
+  PlacesList:{screen: PlacesList,navigationOptions: {
+    title: "liste d'endroits"}},
+  Visiter: { screen: Visiter },
+  Visiter_carte: {screen: Visiter_carte}
 })
 const Container = createAppContainer(Navigator);
 
